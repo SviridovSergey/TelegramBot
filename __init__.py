@@ -29,7 +29,7 @@ print("1")
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(message.chat.id, "Привет! Отправьте мне номер телефона и ФИО в формате: +7XXXXXXXXXX Иван Иванов")
-    print("2")
+    print(2,"func start ")
 
 
 
@@ -38,14 +38,13 @@ def start(message):
         #return True
 @bot.message_handler(commands=['sendinfo'])
 def send_info(message):
-    # Получаем курсор из глобальной переменной.  Это не лучший подход, но для простоты оставим так.
     cursor.execute("SELECT id, phone_number, full_name FROM clients")
     results = cursor.fetchall()
     output_string = ""
     for row in results:
         output_string += f"ID: {row[0]}, Номер: {row[1]}, ФИО: {row[2]}\n"
     bot.send_message(message.chat.id, output_string)  # Отправляем сообщение ботом
-    print("2")
+    print(2,"func send_info compl")
 
 
         #https: // svse343.amocrm.ru / dashboard /?sel = all & period = week
@@ -73,7 +72,7 @@ def handle_message(message):
         bot.send_message(message.chat.id, f"Произошла ошибка: {e}")
         print(e)
     finally:
-        print(3)
+        print(3,"func handle_message compl")
         conn.close()
 
 
@@ -114,7 +113,7 @@ def sendReq():
             print(f"Ошибка при создании контакта {full_name} ({phone_number}): {e}")
         except Exception as e:
             print(f"Ошибка: {e}")
-    print(4)
+    print(4,"func sendReq compl")
 
 
 
@@ -162,4 +161,4 @@ def create_amo_contact(user_data: object) -> object:
 
 if __name__ == "__main__":
     sendReq()
-    bot.polling(none_stop=True)
+    #bot.polling(none_stop=True)
