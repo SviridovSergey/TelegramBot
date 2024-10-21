@@ -1,0 +1,45 @@
+есть
+есть
+3 дергаем по api запросы (создать карточку контакт,записать телефон)
+
+contact_data = {
+  "add": [
+    {
+      "name": "\u0418\u043c\u044f \u0424\u0430\u043c\u0438\u043b\u0438\u044f",
+      "first_name": "\u0418\u043c\u044f",
+      "last_name": "\u0424\u0430\u043c\u0438\u043b\u0438\u044f",
+      "custom_fields": [
+        {
+          "id": 24793,
+          "values": [
+            {
+              "value": "+79991112233",
+              "enum": "WORK"
+            }
+          ]
+        },
+        {
+          "id": 24795,
+          "values": [
+            {
+              "value": "email@example.com",
+              "enum": "WORK"
+            }
+          ]
+        }
+      ],
+      "phone": [
+        {
+          "value": "+79991112233",
+          "type": "WORK"
+        }
+      ],
+      "email": [
+        {
+          "value": "email@example.com",
+          "type": "WORK"
+        }
+      ]
+    }
+  ]
+}
