@@ -471,7 +471,7 @@ json_data_string ='''
     },
     "ENTREE_DEALS": 1,
         "TYPE_CODE": "TRACKING_DATA",
-        "~NAME": "utm_source"
+        "NAME": "utm_source",
         "OPENSTAT_AD":{
         "ID":24821,
         "NAME":"openstat_ad",
@@ -503,7 +503,8 @@ json_data_string ='''
             "ELEMENT_TYPES":{"0":2},
             "ENTREE_DEALS":1,
             "TYPE_CODE":"TRACKING_DATA",
-            "~NAME":"openstat_ad"}
+            "NAME":"openstat_ad"
+        },
     "OPENSTAT_SOURCE":{
         "ID":24823,
         "NAME":"openstat_source",
@@ -522,35 +523,106 @@ json_data_string ='''
         "ORIGIN":null,
         "CATALOG_ID":null,
         "SETTINGS":{
-        "is_required":{},
-        "is_deletable":true,
-        "is_visible":true,
-        "triggers":null,
-        "vat_rates":{},
-        "filter_type":null,
-        "tracking_callback":"",
-        "search_in":"",
-        "currency":"",
-        "chained_lists":null},
-        "deleted_at":null,
-        "ELEMENT_TYPES":{"0":2},
-        "ENTREE_DEALS":1,
-        "TYPE_CODE":"TRACKING_DATA",
-        "~NAME":"openstat_source"}
+            "is_required":{},
+            "is_deletable":true,
+            "is_visible":true,
+            "triggers":null,
+            "vat_rates":{},
+            "filter_type":null,
+            "tracking_callback":"",
+            "search_in":"",
+            "currency":"",
+            "chained_lists":null},
+            "deleted_at":null,
+            "ELEMENT_TYPES":{"0":2},
+            "ENTREE_DEALS":1,
+            "TYPE_CODE":"TRACKING_DATA",
+            "~NAME":"openstat_source"
+        }
+    },
+    "OPENSTAT_AD":{
+        "ID":24821,
+        "NAME":"openstat_ad",
+        "TYPE_ID":21,
+        "ACCOUNT_ID":32001522,
+        "DESCRIPTION":null,
+        "CODE":"OPENSTAT_AD",
+        "SORT":513,
+        "ENTREE_CONTACTS":0,
+        "ENTREE_COMPANY":0,
+        "ENTREE_CATALOG":0,
+        "ENTREE_CUSTOMERS":0,
+        "PREDEFINED":"Y",
+        "MULTIPLE":"N",
+        "DISABLED":0,
+        "ORIGIN":null,
+        "CATALOG_ID":null,
+        "SETTINGS":{
+            "is_required":{},
+            "is_deletable":true,
+            "is_visible":true,
+            "triggers":null,
+            "vat_rates":{},
+            "filter_type":null,
+            "tracking_callback":"",
+            "search_in":"",
+            "currency":"",
+            "chained_lists":null,
+            "deleted_at":null,
+            "ELEMENT_TYPES":{"0":2},
+            "ENTREE_DEALS":1,
+            "TYPE_CODE":"TRACKING_DATA",
+            "~NAME":"openstat_ad"
+        }
+    },
+    "OPENSTAT_SOURCE":{
+        "ID":24823,
+        "NAME":"openstat_source",
+        "TYPE_ID":21,
+        "ACCOUNT_ID":32001522,
+        "DESCRIPTION":null,
+        "CODE":"OPENSTAT_SOURCE",
+        "SORT":514,
+        "ENTREE_CONTACTS":0,
+        "ENTREE_COMPANY":0,
+        "ENTREE_CATALOG":0,
+        "ENTREE_CUSTOMERS":0,
+        "PREDEFINED":"Y",
+        "MULTIPLE":"N",
+        "DISABLED":0,
+        "ORIGIN":null,
+        "CATALOG_ID":null,
+        "SETTINGS":{
+            "is_required":{},
+            "is_deletable":true,
+            "is_visible":true,
+            "triggers":null,
+            "vat_rates":{},
+            "filter_type":null,
+            "tracking_callback":"",
+            "search_in":"",
+            "currency":"",
+            "chained_lists":null,
+            "deleted_at":null,
+            "ELEMENT_TYPES":{"0":2},
+            "ENTREE_DEALS":1,
+            "TYPE_CODE":"TRACKING_DATA",
+            "~NAME":"openstat_source"
+        }
     }
 }
 '''
 
 try:
     data = json.loads(json_data_string)
-    # Доступ к данным:
-    print(data["OPENSTAT_AD"]["NAME"])  # Выведет: openstat_ad
-    print(data["OPENSTAT_SOURCE"]["ID"]) # Выведет: 24823
-    # и так далее...
-
+    name_variable = data["OPENSTAT_AD"]["NAME"]  # Запись в переменную
+    id_variable = data["OPENSTAT_AD"]["ID"]
+    print(f"Значение переменной: {name_variable}")  # Вывод значения переменной
+    print(f"Значение переменной: {id_variable}")
 except json.JSONDecodeError as e:
     print(f"Ошибка разбора JSON: {e}")
 except KeyError as e:
     print(f"Ключ не найден: {e}")
 except Exception as e:
     print(f"Произошла ошибка: {e}")
+
